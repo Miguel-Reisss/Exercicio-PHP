@@ -16,9 +16,69 @@ $alunos = [
     ["nome" => "Lucas", "idade" => 20, "nota" => 8.9],
     ["nome" => "Mariana", "idade" => 18, "nota" => 9.4],
 ];
-
-    
-
-
-
 ?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .aprovado {
+            background-color: green;
+        }
+
+        .reprovado {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <article>
+        <h1>Boletim da Turma</h1>
+
+
+        <table border=1>
+
+            <thead class="cabecalho fundo-cinza">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Nota</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($alunos as $aluno): ?>
+                    <tr>
+                        <td><?= $aluno["nome"] ?></td>
+                        <td><?= $aluno["idade"] ?></td>
+                        <td><?= $aluno["nota"] ?></td>
+                        <td class="<?= ($aluno['nota'] >= 7) ? 'aprovado' : 'reprovado' ?>">
+                            <?= ($aluno['nota'] >= 7) ? 'Aprovado' : 'Reprovado' ?>
+                        </td>
+                    
+
+                    </tr>
+                <?php endforeach; ?>
+
+            </tbody>
+
+
+
+        </table>
+
+
+
+
+
+</body>
+
+</html>

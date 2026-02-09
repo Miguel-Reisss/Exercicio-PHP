@@ -29,35 +29,40 @@ $estadosBrasil = [
     'SP' => 'São Paulo',
     'SE' => 'Sergipe',
     'TO' => 'Tocantins'
-    
+
 ];
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estados do Brasil</title>
 </head>
+
 <body>
 
     <label for="estado">Selecione um Estado:</label>
-    
-      <select id="estado" name="estado">
-    
 
-       <?php foreach ($estadosBrasil as $sigla => $nome): ?> 
-             <option value="<?= $sigla ?>"> <?= $nome ?> </option> 
+    <select id="estado" name="estado">
+
+
+        <?php foreach ($estadosBrasil as $sigla => $nome): ?>
+            <option value="<?= $sigla ?>"> <?= $nome ?> </option>
         <?php endforeach; ?>
 
-      </select>
-      <button type="submit">Enviar</button>
+    </select>
+    <button type="submit">Enviar</button>
 
-   
-        
-         
-    
+
+
+
+
 
 </body>
+
 </html>
